@@ -1,0 +1,19 @@
+# Copy this file to .env and update with your actual values
+
+# Database Configuration
+DATABASE_URL=postgresql://postgres:password@localhost:5432/modulelearning_db
+
+# Django Settings
+SECRET_KEY=django-insecure-z2wy^=$l5ojj_sz+3xioj-t-=8g98p#14qes$+v-03ku7bh$d^
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# CORS Settings
+CORS_ALLOW_ALL_ORIGINS=True
+
+# Stripe Configuration (for future payment integration)
+STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+STRIPE_SECRET_KEY=your_stripe_secret_key
+
+# Email Configuration (for future notifications)
+EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
