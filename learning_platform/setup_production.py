@@ -27,6 +27,18 @@ def setup_production():
         print("👤 Creating demo user...")
         execute_from_command_line(['manage.py', 'create_demo_user'])
         
+        # Create admin superuser
+        print("👨‍💼 Creating admin superuser...")
+        try:
+            from django.contrib.auth.models import User
+            if not User.objects.filter(username='admin').exists():
+                User.objects.create_superuser('admin', 'admin@safeoperatorpro.com', 'admin123')
+                print("✅ Admin user created: admin / admin123")
+            else:
+                print("ℹ️ Admin user already exists")
+        except Exception as e:
+            print(f"⚠️ Could not create admin user: {e}")
+        
         # Populate sample data
         print("📚 Populating sample safety training data...")
         execute_from_command_line(['manage.py', 'populate_sample_data'])
