@@ -31,9 +31,10 @@ def setup_production():
         print("👨‍💼 Creating admin superuser...")
         try:
             from django.contrib.auth.models import User
+            admin_password = os.getenv('ADMIN_PASSWORD', 'admin123')
             if not User.objects.filter(username='admin').exists():
-                User.objects.create_superuser('admin', 'admin@safeoperatorpro.com', 'admin123')
-                print("✅ Admin user created: admin / admin123")
+                User.objects.create_superuser('admin', 'admin@safeoperatorpro.com', admin_password)
+                print("✅ Admin user created: admin / [password from environment]")
             else:
                 print("ℹ️ Admin user already exists")
         except Exception as e:
