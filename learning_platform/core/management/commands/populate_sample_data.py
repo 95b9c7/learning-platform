@@ -241,4 +241,4 @@ class Command(BaseCommand):
         
         self.stdout.write(self.style.SUCCESS('Successfully populated database with sample safety training data!'))
         self.stdout.write('You can now access the Django admin at: http://127.0.0.1:8000/admin/')
-        self.stdout.write('Username: admin, Password: (you need to set this)')
+        self.stdout.write('Username: admin, Password: Aaric@61401')
